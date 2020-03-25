@@ -14,8 +14,8 @@ RUN apt-get install -y python3.8-venv || python3-venv || true
 RUN mkdir environments && cd environments
 RUN python3 -m venv jupyterlab
 RUN . jupyterlab/bin/activate
-RUN pip install jupyterlab
-RUN pip install notebook
+RUN pip install jupyterlab || pip3 install jupyterlab
+RUN pip install notebook || pip3 install notebook
 
 # Volume configuration
 VOLUME ["/var/lib/docker/volumes/jupyter_data"]
