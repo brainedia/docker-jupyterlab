@@ -13,7 +13,7 @@ RUN apt-get install -y python3.8-venv || python3-venv || true
 # Python environment einrichten
 RUN mkdir environments && cd environments
 RUN python3 -m venv jupyterlab
-RUN source jupyterlab/bin/activate
+RUN . jupyterlab/bin/activate
 RUN pip install jupyterlab
 RUN pip install notebook
 
