@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 # Update and install software
-RUN apt-get install -y software-properties-common
+# RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get remove --purge -y python3
