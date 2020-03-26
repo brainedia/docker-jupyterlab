@@ -2,6 +2,7 @@
 FROM python:3.8.2-alpine3.11
 
 # Software installieren und updaten & Python environment einrichten
+RUN ["ls", "-al"]
 COPY init.sh /scripts/init.sh
 RUN ["chmod", "+x", "/scripts/init.sh"]
 RUN /scripts/init.sh
