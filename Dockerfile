@@ -1,15 +1,15 @@
 # Download base image: latest Ubuntu LTS
-FROM python:3.8.2-alpine3.11
+FROM python:3.8.2-slim-buster
 
 MAINTAINER Robert Sass <info@brainedia.com>
 
 ENTRYPOINT /bin/bash -c
 
 # Software updaten & installieren
-RUN apk update
-RUN apk add build-base alpine-sdk gcc libffi-dev linux-headers zeromq-dev g++
-RUN apk add python3-dev || python-dev || true
-RUN apk add python-venv || pytgon3-venv || true
+RUN apt-get update
+RUN apt-get install -y build-essential
+RUN apt-get install -y python3-dev || apt-get install -y python-dev || true
+RUN apt-get install -y python3-venv || apt-get install -y python-venv || true
 
 # Python environment einrichten
 RUN mkdir ~/environments && cd ~/environments
