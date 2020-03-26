@@ -20,7 +20,7 @@ VOLUME ["/var/lib/docker/volumes/jupyter_data"]
 WORKDIR /var/lib/docker/volumes/jupyter_data
 
 # Standardkommando ausführen
-CMD cd ~/jupyterlab && export JUPYTER_DATA_DIR=/var/lib/docker/volumes/jupyter_data && jupyter lab --ip 0.0.0.0 --port 8888 --NotebookApp.notebook_dir=$JUPYTER_DATA_DIR/notebooks --allow-root --no-browser
+CMD cd ~/jupyterlab && export JUPYTER_DATA_DIR=/var/lib/docker/volumes/jupyter_data && mkdir $JUPYTER_DATA_DIR/notebooks && jupyter lab --ip 0.0.0.0 --port 8888 --NotebookApp.notebook_dir=$JUPYTER_DATA_DIR/notebooks --allow-root --no-browser
 
 # Exposing Jupyter's port
 EXPOSE 8888
