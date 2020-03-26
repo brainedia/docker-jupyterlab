@@ -3,8 +3,10 @@ FROM python:3.8.2-alpine3.11
 
 # Software installieren und updaten & Python environment einrichten
 RUN ["ls", "-al"]
+RUN ["ls", "-al", ".dockerenv"]
 COPY init.sh /scripts/init.sh
 RUN ["chmod", "+x", "/scripts/init.sh"]
+RUN ["ls", "-al"]
 RUN /scripts/init.sh
 
 # Volume configuration
