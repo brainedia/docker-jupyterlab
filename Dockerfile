@@ -14,16 +14,13 @@ RUN apt-get install -y python3-venv || apt-get install -y python-venv || true
 # Python environment einrichten
 RUN mkdir ~/environments && cd ~/environments
 RUN python3 -m venv jupyterlab
-RUN . jupyterlab/bin/activate
-RUN pip install jupyterlab || pip3 install jupyterlab
-RUN pip install notebook || pip3 install notebook
-RUN deactivate
+RUN . jupyterlab/bin/activate && pip install jupyterlab && pip install notebook && deactivate
 
 # Volume configuration
 VOLUME ["/var/lib/docker/volumes/jupyter_data"]
 
 # Standardkommando ausführen
-CMD cd ~/environments && source jupyterlab/bin/activate && export JUPYTER_DATA_DIR=/var/lib/docker/volumes/jupyter_data && jupyter lab
+CMD cd ~/environments && . jupyterlab/bin/activate && export JUPYTER_DATA_DIR=/var/lib/docker/volumes/jupyter_data && jupyter lab
 
 # Exposing Jupyter's port
 EXPOSE 8888
