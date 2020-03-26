@@ -4,8 +4,8 @@ FROM python:3.8.2-alpine3.11
 ENTRYPOINT /bin/bash -c
 
 # Software updaten & installieren
-RUN apt-get update
-RUN apt-get install -y python3-venv || true
+RUN apk update
+RUN apk install -y python3-venv || true
 
 # Python environment einrichten
 RUN mkdir ~/environments && cd ~/environments
