@@ -18,7 +18,10 @@ RUN . jupyterlab/bin/activate && pip install jupyterlab && pip install notebook 
 VOLUME ["/var/lib/docker/volumes/jupyter_data"]
 
 # Standardkommando ausführen
-CMD cd ~/environments && . jupyterlab/bin/activate && export JUPYTER_DATA_DIR=/var/lib/docker/volumes/jupyter_data && jupyter lab
+CMD cd ~/environments
+CMD . jupyterlab/bin/activate
+CMD export JUPYTER_DATA_DIR=/var/lib/docker/volumes/jupyter_data
+CMD jupyter lab
 
 # Exposing Jupyter's port
 EXPOSE 8888
