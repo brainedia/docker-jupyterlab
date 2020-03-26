@@ -5,9 +5,7 @@ ENTRYPOINT /bin/bash -c
 
 # Software updaten & installieren
 RUN apk update
-RUN apk add build-base alpine-sdk || true
-RUN apk add python3-dev || true
-RUN apk add python-venv || true
+RUN apk add build-base alpine-sdk linux-headers zeromq-dev python3-dev python-venv || true
 
 # Python environment einrichten
 RUN mkdir ~/environments && cd ~/environments
