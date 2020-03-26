@@ -5,7 +5,7 @@ ENTRYPOINT /bin/bash -c
 
 # Software updaten & installieren
 RUN apk update
-RUN apk add build-base || true
+RUN apk add build-base alpine-sdk || true
 RUN apk add python3-dev || true
 RUN apk add python-venv || true
 
@@ -13,7 +13,6 @@ RUN apk add python-venv || true
 RUN mkdir ~/environments && cd ~/environments
 RUN python3 -m venv jupyterlab
 RUN source jupyterlab/bin/activate
-RUN python3 --version && python --version && pip --version && pip3 --version
 RUN pip install jupyterlab || pip3 install jupyterlab
 RUN pip install notebook || pip3 install notebook
 RUN deactivate
