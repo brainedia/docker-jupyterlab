@@ -3,8 +3,6 @@ FROM python:3.8.2-slim-buster
 
 MAINTAINER Robert Sass <info@brainedia.com>
 
-ENTRYPOINT /bin/bash -c
-
 # Software updaten & installieren
 RUN apt-get update
 RUN apt-get install -y build-essential
