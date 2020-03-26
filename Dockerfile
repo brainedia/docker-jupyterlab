@@ -14,7 +14,7 @@ RUN apt-get install -y python3-venv || apt-get install -y python-venv || true
 # Python environment einrichten
 RUN mkdir ~/environments && cd ~/environments
 RUN python3 -m venv jupyterlab
-RUN source jupyterlab/bin/activate
+RUN . jupyterlab/bin/activate
 RUN pip install jupyterlab || pip3 install jupyterlab
 RUN pip install notebook || pip3 install notebook
 RUN deactivate
