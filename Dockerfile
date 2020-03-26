@@ -5,8 +5,9 @@ ENTRYPOINT /bin/bash -c
 
 # Software updaten & installieren
 RUN apk update
-RUN apk add build-essential python3-dev || true
-RUN apk add python3-venv || true
+RUN apk add build-base || true
+RUN apk add python3-dev || true
+RUN apk add python-venv || true
 
 # Python environment einrichten
 RUN mkdir ~/environments && cd ~/environments
