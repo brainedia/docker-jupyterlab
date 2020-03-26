@@ -23,7 +23,7 @@ CMD ls -al
 CMD . jupyterlab/bin/activate
 CMD ls -al
 CMD export JUPYTER_DATA_DIR=/var/lib/docker/volumes/jupyter_data
-CMD jupyter lab
+#CMD jupyter lab
 
 # Exposing Jupyter's port
 EXPOSE 8888
